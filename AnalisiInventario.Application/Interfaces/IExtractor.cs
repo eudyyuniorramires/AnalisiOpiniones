@@ -5,13 +5,10 @@ using System.Threading.Tasks;
 namespace AnalisiOpiniones.Application.Interfaces
 {
 
-    [cite_start]
-    public interface IExtractor
+    public interface IExtractor<T> where T : class
     {
 
-
-        [cite_start]
-        Task ExtractAsync(CancellationToken stoppingToken);
+       Task<List<T>> ExtractAsync(CancellationToken stoppingToken);
 
     }
 }
